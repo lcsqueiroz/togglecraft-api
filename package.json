@@ -1,7 +1,10 @@
 {
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
   "devDependencies": {
     "@types/node": "^26.5.1",
-    "ts-node": "^10.9.2",
     "typescript": "^7.0.2"
   }
 }
