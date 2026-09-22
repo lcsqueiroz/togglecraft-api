@@ -1,6 +1,6 @@
-import { type Flag } from '../domain/flag';
+import { type Flag } from '../domain/flag.ts';
 
-export default interface IFlagRepository{
+export interface IFlagRepository{
   findByKey(key: string): Promise<Flag | null>;
   findAll(): Promise<Flag[]>;
   create(flag: Omit<Flag, 'id' | 'createdAt' | 'updatedAt' >): Promise<Flag>;
