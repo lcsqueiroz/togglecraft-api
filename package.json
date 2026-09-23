@@ -1,7 +1,34 @@
 {
+  "name": "togglecraft",
+  "version": "0.1.0",
+  "description": "A lightweight feature-flag evaluation engine built with Clean Architecture.",
+  "keywords": ["feature-flags", "feature-toggle", "clean-architecture", "typescript"],
+  "license": "MIT",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcsqueiroz/togglecraft-api.git"
+  },
+  "homepage": "https://github.com/lcsqueiroz/togglecraft-api#readme",
+  "bugs": {
+    "url": "https://github.com/lcsqueiroz/togglecraft-api/issues"
+  },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "build": "tsc -p tsconfig.build.json && node scripts/fix-declaration-extensions.js",
+    "prepublishOnly": "npm run build && npm test"
   },
   "devDependencies": {
     "@types/node": "^26.5.1",
